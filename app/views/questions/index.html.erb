@@ -1,8 +1,4 @@
 <div class="container">
-  <h2 class="title-lg mb">Вопросы</h2>
-
-  <%= render @questions %>
-
   <p class="mt">
     <%= link_to "Создать новый вопрос", new_question_path, class: 'button button-main' %>
   </p>
@@ -10,4 +6,15 @@
   <p class="mt">
     <%= render 'form', question: @question %>
   </p>
+</div>
+
+  <div class="container mt-sm>
+    <h2 class="title-lg mb">Вопросы</h2>
+  </div>
+
+  <% @question.each do |question| %>
+    <div class="mt-sm container">
+      <%= render @questions %>
+    </div>
+  <% end %>
 </div>
